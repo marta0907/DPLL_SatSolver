@@ -40,7 +40,6 @@ bool Solver::IsSatisfiable(Formula f) {
 string Solver::ShowResult()
 {
 	return IsSatisfiable(formula) ? "sat": "unsat";
-
 }
 
 string Solver::ShowFullResult()

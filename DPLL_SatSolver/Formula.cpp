@@ -120,7 +120,7 @@ void Formula::AssignToAll()
 
 string Formula::ShowAssignments()
 {
-	string res = "required assignments:\n";
+	string res;
 	for (std::map<int, bool>::iterator iter = assignments.begin(); iter != assignments.end(); ++iter)
 	{
 		int k = iter->first;
