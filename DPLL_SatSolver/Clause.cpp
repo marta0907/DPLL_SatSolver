@@ -18,8 +18,8 @@ bool Clause::IsEmpty() {
 }
 
 void Clause::Remove(Literal l) {
-	literals.erase(remove(literals.begin(), literals.end(), l),
-		literals.end());
+	auto literal = std::find(std::begin(literals), std::end(literals), l);
+	if (literal != std::end(literals)) literals.erase(literal);
 }
 
 bool Clause::Contains(int id, bool negated)

@@ -87,8 +87,8 @@ void Formula::EliminatePureLiterals() {
 }
 
 void Formula::Remove(Clause c) {
-	clauses.erase(remove(clauses.begin(), clauses.end(), c),
-		clauses.end());
+	auto clause = std::find(std::begin(clauses), std::end(clauses), c);
+	if (clause != std::end(clauses)) clauses.erase(clause);
 }
 
 bool Formula::Equals(Formula f) {
@@ -131,7 +131,3 @@ string Formula::ShowAssignments()
 	return res;
 }
 
-bool operator==(const Formula& c1, const Formula& c2)
-{
-	return false;
-}
